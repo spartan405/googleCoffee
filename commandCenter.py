@@ -6,7 +6,7 @@ import sys
 from Adafruit_IO import MQTTClient
 import sys
 sys.path.insert(0, '/home/pi/')
-import blinkingLED
+import coffee
 
 # Set to your Adafruit IO key & username below.
 ADAFRUIT_IO_KEY      = sys.argv[2]
