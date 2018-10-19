@@ -1,9 +1,13 @@
 import RPi.GPIO as GPIO
 import time
+import sys
+
+str_num = sys.argv[3]
+num = int(str_num)
 
 
 #blinking function
-def blinking(pin):
+def blink(pin):
 	GPIO.output(pin,GPIO.HIGH)
 	time.sleep(1)
 	GPIO.output(pin,GPIO.LOW)
@@ -16,6 +20,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 
 #blink 50 times
-for i in range(0,50):
+for i in range(0,num):
 	blink(11)
+print('done')
 GPIO.cleanup()
