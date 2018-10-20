@@ -36,6 +36,7 @@ def disconnected(client):
 def message(client, feed_id, inputIO):
 		
 		if inputIO == '0':
+			print('i got the message'')
 			coffee.main(sysargv[3])
 			
 		else:
