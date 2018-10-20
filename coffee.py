@@ -18,7 +18,7 @@ GPIO.setmode(GPIO.BOARD)
 
 #set up the output channel
 GPIO.setup(11,GPIO.OUT)
-
+time.sleep(5)
 #blink 50 times
 for i in range(0,int(sys.argv[1])):
 	blink(11)
