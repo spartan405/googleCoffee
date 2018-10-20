@@ -1,7 +1,7 @@
 import sys
 
 # Import Adafruit IO MQTT client.
-from Adafruit_IO import MQTTClient, Client, Data
+from Adafruit_IO import MQTTClient
 import sys
 sys.path.insert(0, '/home/pi/')
 import coffee
@@ -13,10 +13,6 @@ ADAFRUIT_IO_USERNAME = sys.argv[1]  # See https://accounts.adafruit.com
 
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID = 'googleCoffee'
-
-aio = Client(sys.argv[1],sys.argv[2])
-data = Data(value=10)
-aio.create_data(FEED_ID,data)
 
 
 
@@ -41,7 +37,7 @@ def message(client, feed_id, inputIO):
 		
 		if inputIO == '0':
 			coffee.main(sysargv[3])
-			delete(feed_id, 1)
+			
 		else:
 			print('Feed {0} recieved new value: {1}'.format(feed_id,inputIO))
 		
