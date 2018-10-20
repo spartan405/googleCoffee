@@ -1,7 +1,7 @@
 import sys
 
 # Import Adafruit IO MQTT client.
-from Adafruit_IO import MQTTClient
+from Adafruit_IO import MQTTClient, Client, Data
 import sys
 sys.path.insert(0, '/home/pi/')
 import coffee
@@ -14,6 +14,9 @@ ADAFRUIT_IO_USERNAME = sys.argv[1]  # See https://accounts.adafruit.com
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID = 'googleCoffee'
 
+aio = Client(sys.argv[1],sys.argv[2])
+data = Data(value=10)
+aio.create_data(FEED_ID,data)
 
 
 
@@ -24,6 +27,7 @@ def connected(client):
     # calls against it easily.
     print('Connected to Adafruit IO!  Listening for {0} changes...'.format(FEED_ID))
     # Subscribe to changes on a feed named DemoFeed.
+	
     client.subscribe(FEED_ID)
 
 def disconnected(client):
