@@ -20,7 +20,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 time.sleep(5)
 #blink 50 times
-for i in range(0,int(sys.argv[1])):
+for i in range(0,int(sys.argv[3])):
 	blink(11)
 print('done')
 GPIO.cleanup()
