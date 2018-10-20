@@ -1,5 +1,3 @@
-
-
 import sys
 
 # Import Adafruit IO MQTT client.
@@ -15,6 +13,8 @@ ADAFRUIT_IO_USERNAME = sys.argv[1]  # See https://accounts.adafruit.com
 
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID = 'googleCoffee'
+
+
 
 
 def connected(client):
@@ -34,8 +34,10 @@ def disconnected(client):
 	
 #takes in value from AdafruitIO feed. THis value should change based on Google Assistant input
 def message(client, feed_id, inputIO):
+		
 		if inputIO == '0':
 			coffee.main(sysargv[3])
+			delete(feed_id, 1)
 		else:
 			print('Feed {0} recieved new value: {1}'.format(feed_id,inputIO))
 		
