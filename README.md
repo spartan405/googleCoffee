@@ -5,4 +5,4 @@ The commandCenter file is supposed to handle reading data from your Adafruit IO 
   
 The coffee file is what the commandCenter file uses to "click" the brew button on the coffee machine
 
-The coffeeNOIFTTT file is a testing version of the coffee file. It performs the same operation as coffee, but needs to be manually run o  the Pi
+The coffeeNOIFTTT file is a testing version of the coffee file. It performs the same operation as coffee, but needs to be manually run on  the Pi
